@@ -13,14 +13,14 @@ Replace the model to be tested with gn-x2.h5 and gn-x4.h5 as needed.
 
 Data was obtained from [here](https://drive.google.com/drive/folders/1Rs68uH8Xqa4j6UxG53wzD0uyI8347dSq)
 
-Code used to create the Goodnet models is goodnet.py. To run in command line, a few lines of the script need to be edited to accept system arguments, which are noted in the code. Otherwise, it can run as-is in an IDE with the appropriate libraries installed in the environment. Dependencies are the same as the lab describes, i.e.:  
+Code used to create the Goodnet models is goodnet.py. To run in command line, a few lines of the script need to be edited to accept system arguments, which are noted in the code. Otherwise, it can run as-is in an IDE with the appropriate libraries installed in the environment.  
+Dependencies:  
 
-
-    Python 3.6.9
-    Keras 2.3.1
-    Numpy 1.16.3
-    Matplotlib 2.2.2
-    H5py 2.9.0
-    TensorFlow-gpu 1.15.2
+    Python 
+    Keras 
+    Numpy 
+    Matplotlib 
+    H5py 
+    TensorFlow
 
 Screenshots of the Goodnet outputs, as well as a brief report are also included.
