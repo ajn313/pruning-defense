@@ -23,4 +23,4 @@ Dependencies:
     H5py 
     TensorFlow
 
-Screenshots of the Goodnet outputs, as well as a brief report are also included.
+Screenshots of the Goodnet outputs as png files, as well as a brief report titled ajn313_Report_Backdoor_Attacks.pdf are also included.
