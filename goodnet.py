@@ -87,6 +87,8 @@ def main():
             del(layer_curr)
             del(labels_curr)
             it_2 = it_2-1
+            if it_2 == -1:
+                break
         cl_label2 = np.argmax(gn_x2.predict(cl_x_test), axis=1)
         clean_accuracy2 = np.mean(np.equal(cl_label2, cl_y_test))*100
         print(f"Goodnet {goodnet_percentage}% Clean Classification Validation accuracy: {clean_accuracy2}")
@@ -115,6 +117,7 @@ def main():
         it_10 = 0
         layer_ind = 7 #if you would like to change the starting layer, you can change this to 5
         pad = 0
+        channels = 0
         if goodnet_percentage == 4:
            pad = 0.14
         if goodnet_percentage ==10:
@@ -134,6 +137,7 @@ def main():
             asr10 = np.mean(np.equal(pred, bd_y_test))*100
             if asr10<100 and temp_acc >= (clean_accuracy-goodnet_percentage):
                 gn_x10.layers[layer_ind].set_weights(layer_curr)
+                channels = channels + 1
             labels_curr = np.argmax(gn_x10.predict(cl_x_test), axis=1)
             acc_curr = np.mean(np.equal(labels_curr, cl_y_test))*100
             #print accuracy every 10 steps, see how the final model is doing
@@ -173,6 +177,7 @@ def main():
         asr10 = np.mean(np.equal(pred, bd_y_final))*100
         print(f"Goodnet {goodnet_percentage}% Attack Test Success Rate: {asr10}")
         gn_x10.save(model_path.format(perc = goodnet_percentage))
+        print(f"Channels pruned: {channels} out of 180, ", (channels/180)*100,"%")
         del(gn_x10)
     
 if __name__ == '__main__':
