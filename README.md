@@ -10,3 +10,5 @@ python3 eval.py data/cl/valid.h5 data/bd/bd_valid.h5 models/gn-x10.h5
 Data was obtained from [here](https://drive.google.com/drive/folders/1Rs68uH8Xqa4j6UxG53wzD0uyI8347dSq)
 
 Code used to create the Goodnet models is goodnet.py
+
+Screenshots of the Goodnet outputs, as well as a brief report are also included.
